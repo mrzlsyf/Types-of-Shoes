@@ -1,0 +1,37 @@
+{% extends "layout.html"%} {% block title %} Analisis Jenis Sepatu {% endblock
+%} {% block content %}
+<div class="container py-5">
+  <header class="text-white text-center">
+    <h1 class="display-4">Analisis Jenis Sepatu</h1>
+    <p class="lead mb-5">
+      Anda akan melihat hasil analisis jenis sepatu dari gambar yang telah
+      diinputkan.
+    </p>
+  </header>
+
+  <header class="text-white text-center">
+    <h1 class="display-5">Jenis Sepatu</h1>
+    {% if predictions %}
+    <h2 class="display-4 text-dark font-weight-bold">{{predictions}}</h2>
+    {% else %}
+    <h2 class="display-4 text-dark font-weight-bold">{{err}}</h2>
+    {% endif %}
+  </header>
+
+  <br />
+  <br />
+
+  <div class="container">
+    <div class="row">
+      <div class="col text-center">
+        <input
+          type="button"
+          class="btn btn-primary my-3"
+          value="Kembali"
+          onClick="history.go(-1)"
+        />
+      </div>
+    </div>
+  </div>
+  {% endblock %}
+</div>
